@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="542" height="1174" viewBox="0 0 542 1174">
+<rect width="100%" height="100%" fill="white"/>
+<text x="271" y="22" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#111">CF_ADC_SAR12</text>
+<rect x="166" y="48" width="210" height="1054" fill="#f7f7f7" stroke="#222" stroke-width="1.5"/>
+<text x="271" y="580" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333">CF_ADC_SAR12</text>
+<line x1="166" y1="69" x2="148" y2="69" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="73" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">en_pump_lv</text>
+<line x1="166" y1="91" x2="148" y2="91" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="95" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">sample_width[9:0]</text>
+<line x1="166" y1="113" x2="148" y2="113" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="117" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vreflo</text>
+<line x1="166" y1="135" x2="148" y2="135" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="139" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">resolution[1:0]</text>
+<line x1="166" y1="157" x2="148" y2="157" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="161" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">scan_test_mode</text>
+<line x1="166" y1="179" x2="148" y2="179" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="183" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">test_scanin</text>
+<line x1="166" y1="201" x2="148" y2="201" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="205" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">test_scanen</text>
+<line x1="166" y1="223" x2="148" y2="223" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="227" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">sel_csel_dft[3:0]</text>
+<line x1="166" y1="245" x2="148" y2="245" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="249" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">hiz</text>
+<line x1="166" y1="267" x2="148" y2="267" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="271" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">sof</text>
+<line x1="166" y1="289" x2="148" y2="289" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="293" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">test_sea</text>
+<line x1="166" y1="311" x2="148" y2="311" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="315" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">reset_n</text>
+<line x1="166" y1="333" x2="148" y2="333" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="337" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">iso_en</text>
+<line x1="166" y1="355" x2="148" y2="355" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="359" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">next</text>
+<line x1="166" y1="377" x2="148" y2="377" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="381" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vinp</text>
+<line x1="166" y1="399" x2="148" y2="399" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="403" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vinm</text>
+<line x1="166" y1="421" x2="148" y2="421" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="425" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vrefhi</text>
+<line x1="166" y1="443" x2="148" y2="443" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="447" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vssa_q</text>
+<line x1="166" y1="465" x2="148" y2="465" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="469" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_inp</text>
+<line x1="166" y1="487" x2="148" y2="487" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="491" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_inm</text>
+<line x1="166" y1="509" x2="148" y2="509" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="513" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_op</text>
+<line x1="166" y1="531" x2="148" y2="531" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="535" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_om</text>
+<line x1="166" y1="553" x2="148" y2="553" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="557" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">trimunit</text>
+<line x1="166" y1="575" x2="148" y2="575" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="579" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vpwr_lv_int</text>
+<line x1="166" y1="597" x2="148" y2="597" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="601" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vdda_q</text>
+<line x1="166" y1="619" x2="148" y2="619" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="623" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">VPUMP</text>
+<line x1="166" y1="641" x2="148" y2="641" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="645" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vboost</text>
+<line x1="166" y1="663" x2="148" y2="663" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="667" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">refby2</text>
+<line x1="166" y1="685" x2="148" y2="685" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="689" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">cap_trim[2:0]</text>
+<line x1="166" y1="707" x2="148" y2="707" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="711" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">pumpclk</text>
+<line x1="166" y1="729" x2="148" y2="729" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="733" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">pd</text>
+<line x1="166" y1="751" x2="148" y2="751" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="755" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">pd_ana</text>
+<line x1="166" y1="773" x2="148" y2="773" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="777" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">refclk</text>
+<line x1="166" y1="795" x2="148" y2="795" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="799" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_inc[3:0]</text>
+<line x1="166" y1="817" x2="148" y2="817" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="821" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_outc[2:0]</text>
+<line x1="166" y1="839" x2="148" y2="839" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="843" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vccd_q</text>
+<line x1="166" y1="861" x2="148" y2="861" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="865" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vpwr_int</text>
+<line x1="166" y1="883" x2="148" y2="883" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="887" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vpwrd_int</text>
+<line x1="166" y1="905" x2="148" y2="905" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="909" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">icont_lv[1:0]</text>
+<line x1="166" y1="927" x2="148" y2="927" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="931" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vsub_vic</text>
+<line x1="166" y1="949" x2="148" y2="949" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="953" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">vsub_agr</text>
+<line x1="166" y1="971" x2="148" y2="971" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="975" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dly_inc</text>
+<line x1="166" y1="993" x2="148" y2="993" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="997" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dcen</text>
+<line x1="166" y1="1015" x2="148" y2="1015" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="1019" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">ibiasin</text>
+<line x1="166" y1="1037" x2="148" y2="1037" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="1041" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">ibias2p5u</text>
+<line x1="166" y1="1059" x2="148" y2="1059" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="1063" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">ibias2p5u_1</text>
+<line x1="166" y1="1081" x2="148" y2="1081" stroke="#222" stroke-width="1.25"/>
+<text x="142" y="1085" text-anchor="end" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">enable_hv</text>
+<line x1="376" y1="520" x2="394" y2="520" stroke="#222" stroke-width="1.25"/>
+<text x="400" y="524" text-anchor="start" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">test_scanout</text>
+<line x1="376" y1="542" x2="394" y2="542" stroke="#222" stroke-width="1.25"/>
+<text x="400" y="546" text-anchor="start" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">en_csel_dft</text>
+<line x1="376" y1="564" x2="394" y2="564" stroke="#222" stroke-width="1.25"/>
+<text x="400" y="568" text-anchor="start" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">eof</text>
+<line x1="376" y1="586" x2="394" y2="586" stroke="#222" stroke-width="1.25"/>
+<text x="400" y="590" text-anchor="start" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">data_out[11:0]</text>
+<line x1="376" y1="608" x2="394" y2="608" stroke="#222" stroke-width="1.25"/>
+<text x="400" y="612" text-anchor="start" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">dft_enc</text>
+<line x1="376" y1="630" x2="394" y2="630" stroke="#222" stroke-width="1.25"/>
+<text x="400" y="634" text-anchor="start" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111">ibias2p5u_out</text>
+<line x1="178" y1="1102" x2="178" y2="1116" stroke="#222" stroke-width="1.25"/>
+<text x="178" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vdda</text>
+<line x1="240" y1="1102" x2="240" y2="1116" stroke="#222" stroke-width="1.25"/>
+<text x="240" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vssd</text>
+<line x1="302" y1="1102" x2="302" y2="1116" stroke="#222" stroke-width="1.25"/>
+<text x="302" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vssa</text>
+<line x1="364" y1="1102" x2="364" y2="1116" stroke="#222" stroke-width="1.25"/>
+<text x="364" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vccd</text>
+</svg>

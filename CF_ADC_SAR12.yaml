@@ -1,0 +1,24 @@
+info:
+  name: CF_ADC_SAR12
+  description: 12-bit SAR ADC (CF_ADC_SAR12) is a ChipFoundry hard-macro
+    blackbox on SkyWater 130 nm.
+  repo: https://github.com/chipfoundry/CF_ADC_SAR12
+  owner: ChipFoundry
+  license: proprietary
+  author: ChipFoundry
+  email: support@chipfoundry.io
+  version: 0.1.0
+  date: 9-4-2026
+  category: digital
+  tags:
+  - CF_ADC_SAR12
+  bus: n/a
+  type: hard
+  maturity: Production
+  width: '473.24'
+  height: '503'
+  technology: sky130
+  digital_supply_voltage: n/a
+  analog_supply_voltage: n/a
+  clock_freq_mhz: '18'
+  cell_count: '2'
