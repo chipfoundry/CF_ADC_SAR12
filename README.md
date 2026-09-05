@@ -6,10 +6,11 @@ Draft for designer review. Electrical values below are transcribed from the
 packaging source extract. The public GDS is an abstract; ChipFoundry
 substitutes protected full geometry at tapeout.
 
-This package ships two hard macros: `CF_ADC_SAR12` (SAR core) and
-`CF_ADC_SAR12_sar_refs` (reference system). Place both. Wire `REFHI` /
-`REFBY2` from the reference macro into `vrefhi` / `refby2` on the core unless
-you are using an external reference.
+This package ships an SRAM-style PG wrap `CF_ADC_SAR12` around analog leaf
+`CF_ADC_SAR12_core`, plus companion `CF_ADC_SAR12_sar_refs` (unwrapped
+reference system). Instantiate `CF_ADC_SAR12`. Place `CF_ADC_SAR12_sar_refs`
+and wire `REFHI` / `REFBY2` into `vrefhi` / `refby2` unless you are using an
+external reference.
 
 ## Overview
 
@@ -28,25 +29,31 @@ An external-reference mode is supported: drive `vrefhi` / `vreflo` /
 `refby2` from chip-level references instead of the on-macro reference
 outputs when system-level accuracy requires it.
 
-Core size is 473.24 × 503 µm. The reference macro is 503 × 129.835 µm.
+Customer cell `CF_ADC_SAR12` is 503.24 × 533 µm (15 µm halo around analog
+leaf 473.24 × 503 µm). The reference macro is 503 × 129.835 µm. Chip PDN is
+`vpwr` / `vgnd`. Vendor digital pads `vccd` / `vssd` are tied inside the
+wrap. Analog supplies stay wrap ports.
 
 ## Installation
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_SAR12 --version 0.1.0 --include-drafts
+ipm install CF_ADC_SAR12 --version 0.2.0 --include-drafts
 ```
 
 Until the marketplace listing is published, install from a local catalog
-override:
+override the same way `cf-adc-sar12-test-project` does:
 
 ```bash
-ipm install CF_ADC_SAR12 --version 0.1.0 --include-drafts --local-file ip/catalog.json
+ipm install CF_ADC_SAR12 --version 0.2.0 --include-drafts --local-file ip/catalog.json
 ```
 
-Use `hdl/gl/` as the blackbox, `layout/lef/` for P&R, and `layout/gds/` for the
-public abstract. Characterized Liberty for these abstract pinouts is not in
-this package yet.
+Use `hdl/gl/CF_ADC_SAR12.v` as the customer blackbox, `layout/lef/CF_ADC_SAR12.lef`
+for P&R, and `layout/gds/CF_ADC_SAR12.gds` / `layout/mag/CF_ADC_SAR12.mag` for
+the public wrap. `CF_ADC_SAR12_core` is the analog leaf (empty Verilog,
+pin-only abstract). ChipFoundry substitutes vault GDS into
+`CF_ADC_SAR12_core` at tapeout. `timing/lib/` is the characterized analog
+view; P&R uses the wrap LEF (`vpwr` / `vgnd` plus analog supplies).
 
 ## Features
 
@@ -57,7 +64,8 @@ this package yet.
 - External reference mode via `vrefhi` / `vreflo` / `refby2`
 - 12-bit `data_out` with `sof` / `eof` framing
 - Separate analog (`pd_ana`) and block (`pd`) power-down
-- Hard-macro size 473.24 × 503 µm (core)
+- Customer cell `CF_ADC_SAR12` 503.24 × 533 µm (15 µm halo around analog leaf 473.24 × 503 µm)
+- Chip PDN is `vpwr` / `vgnd`. Vendor `vccd` / `vssd` are tied inside the wrap.
 
 ## Pinout
 
@@ -66,20 +74,23 @@ Internal schematics and architecture block diagrams are not published.
 
 ![CF_ADC_SAR12 pinout](doc/generated/CF_ADC_SAR12_pinout.svg)
 
-Pin names and directions match the public abstract (`layout/lef/CF_ADC_SAR12.lef`)
+Pin names and directions match the public wrap (`layout/lef/CF_ADC_SAR12.lef`)
 and the blackbox stub (`hdl/gl/CF_ADC_SAR12.v`). The reference macro is
 documented in the pin table below; it is not shown on this pinout.
 
 ## Pin Description
 
+Directions and widths are taken from the shipped Verilog in `hdl/gl/CF_ADC_SAR12.v`.
+Descriptions are from the packaging extract where they match that stub.
+
 ### `CF_ADC_SAR12` analog
 
 | Pin | Direction | Width | Notes |
-|---|---|---|---|
+|---|---|---:|---|
 | vinp | input | 1 | Positive analog input |
 | vinm | input | 1 | Negative analog input |
 | vrefhi | input | 1 | High reference; typically `REFHI` from the reference macro |
-| vreflo | inout | 1 | Low reference / analog ground (`USE GROUND`) |
+| vreflo | inout | 1 | Low reference / analog ground |
 | refby2 | input | 1 | Mid reference; typically `REFBY2` from the reference macro |
 | ibias2p5u | input | 1 | 2.5 µA bias input |
 | ibias2p5u_1 | input | 1 | Companion 2.5 µA bias input |
@@ -89,7 +100,7 @@ documented in the pin table below; it is not shown on this pinout.
 ### `CF_ADC_SAR12` conversion and control
 
 | Pin | Direction | Width | Notes |
-|---|---|---|---|
+|---|---|---:|---|
 | refclk | input | 1 | Conversion clock (18 MHz for 1 Msps) |
 | sof | input | 1 | Start of frame |
 | eof | output | 1 | End of frame |
@@ -114,7 +125,7 @@ documented in the pin table below; it is not shown on this pinout.
 ### `CF_ADC_SAR12` DFT and scan
 
 | Pin | Direction | Width |
-|---|---|---|
+|---|---|---:|
 | dft_inp | inout | 1 |
 | dft_inm | inout | 1 |
 | dft_op | inout | 1 |
@@ -132,27 +143,35 @@ documented in the pin table below; it is not shown on this pinout.
 
 ### `CF_ADC_SAR12` supplies
 
-| Pin | Direction | Width | USE |
-|---|---|---|---|
-| vdda | inout | 1 | POWER |
-| vdda_q | inout | 1 | POWER |
-| vccd | inout | 1 | POWER |
-| vccd_q | inout | 1 | POWER |
-| VPUMP | inout | 1 | POWER |
-| vboost | inout | 1 | POWER |
-| vpwr_int | inout | 1 | POWER |
-| vpwr_lv_int | inout | 1 | POWER |
-| vpwrd_int | inout | 1 | POWER |
-| vssa | inout | 1 | GROUND |
-| vssa_q | inout | 1 | GROUND |
-| vssd | inout | 1 | GROUND |
-| vsub_vic | inout | 1 | GROUND |
-| vsub_agr | inout | 1 | GROUND |
+| Pin | Direction | Width | Notes |
+|---|---|---:|---|
+| vpwr | input | 1 | Chip digital PDN. Wrap ties core `vccd` here. |
+| vgnd | input | 1 | Chip digital ground. Wrap ties core `vssd` here. |
+| vdda | inout | 1 | Analog supply; route separately (LEF USE SIGNAL) |
+| vdda_q | inout | 1 | Quiet analog supply |
+| vssa | inout | 1 | Analog ground |
+| vssa_q | inout | 1 | Quiet analog ground |
+| VPUMP | inout | 1 | Charge-pump supply |
+| vboost | inout | 1 | Boost supply |
+| vpwr_int | inout | 1 | Internal analog supply |
+| vpwr_lv_int | inout | 1 | Internal low-voltage supply |
+| vpwrd_int | inout | 1 | Internal digital supply |
+| vccd_q | inout | 1 | Quiet digital supply |
+| vsub_vic | inout | 1 | Substrate |
+| vsub_agr | inout | 1 | Analog-ground substrate |
+
+This leaf has no named well taps. In OpenLane / LibreLane, hook chip PDN with
+`PDN_MACRO_CONNECTIONS: "u_cf_adc_sar12 vccd1 vssd1 vpwr vgnd"` and connect
+`.vpwr(vccd1)`, `.vgnd(vssd1)` under `USE_POWER_PINS`. Route analog supplies
+and analog I/O separately. Do not list vendor `vccd` / `vssd` on the wrapper
+instance.
 
 ### `CF_ADC_SAR12_sar_refs`
 
+Unwrapped companion. Supplies remain vendor `vccd` / `vssd` plus analog rails.
+
 | Pin | Direction | Width | Notes |
-|---|---|---|---|
+|---|---|---:|---|
 | REFHI | output | 1 | High reference to core `vrefhi` |
 | REFBY2 | output | 1 | Mid reference to core `refby2` |
 | refout | output | 1 | Buffered reference output |
@@ -177,44 +196,54 @@ documented in the pin table below; it is not shown on this pinout.
 | sw_start | input | 1 | Switch start |
 | sw_holdb | input | 1 | Hold (active low) |
 | dft_comp_en | input | 1 | DFT comparator enable |
-| vda_int | output | 1 | Internal analog supply (`USE POWER`) |
-| vpwrd_int | output | 1 | Internal digital supply (`USE POWER`) |
-| vdda | inout | 1 | POWER |
-| vccd | inout | 1 | POWER |
-| VPUMP | inout | 1 | POWER |
-| vssa | inout | 1 | GROUND |
-| vssd | inout | 1 | GROUND |
-| vssa_shield | inout | 1 | GROUND |
+| vda_int | output | 1 | Internal analog supply |
+| vpwrd_int | output | 1 | Internal digital supply |
+| vdda | inout | 1 | Analog supply |
+| vccd | inout | 1 | Digital supply (unwrapped) |
+| VPUMP | inout | 1 | Charge-pump supply |
+| vssa | inout | 1 | Analog ground |
+| vssd | inout | 1 | Digital ground (unwrapped) |
+| vssa_shield | inout | 1 | Shield ground |
 
 ## Specifications
 
-Electrical values belong in Liberty when a characterized view matching this
-abstract is added. This package does not invent PVT tables.
+Electrical values belong in Liberty. Typical corner
+`timing/lib/CF_ADC_SAR12_tt_25C_1p8V_3p3V.lib` matches the core abstract pin
+set. The reference-macro Liberty covers 28 of 46 LEF pins; analog trim and
+mux buses `vref[4:0]`, `S_LV[7:0]`, `muxsarref[2:0]`, and `PWR_CTRL_VREF[1:0]`
+are on the abstract only.
 
 | Item | Value |
 |---|---|
 | Resolution | 12 bits |
 | Throughput | 1 Msps at `refclk` = 18 MHz |
 | Analog inputs | Differential `vinp` / `vinm` |
-| Core size | 473.24 × 503 µm |
+| Customer wrap | 503.24 × 533 µm |
+| Analog leaf | 473.24 × 503 µm |
 | Reference-macro size | 503 × 129.835 µm |
 | Process | SkyWater 130 nm |
 
 ## Timing Diagram
 
 A conversion starts when `sof` is asserted with `refclk` running and `pd` /
-`pd_ana` held inactive. `data_out[11:0]` is valid when `eof` rises. Exact
-setup/hold and the `sample_width` field encoding are not synthesized from
-this abstract; copy them from a matching Liberty view when one is added.
+`pd_ana` held inactive. `data_out[11:0]` is valid when `eof` rises. Copy
+setup/hold and the `sample_width` field encoding from the matching Liberty
+view.
 
 ## Limitations and Open Issues
 
-- Verilog in `hdl/gl/` is a behavioral blackbox, not a SPICE-accurate model.
-- Characterized Liberty for this abstract pinout is not shipped.
+- Verilog in `hdl/gl/CF_ADC_SAR12.v` is a structural wrap around an empty
+  `CF_ADC_SAR12_core` blackbox, not a SPICE-accurate model.
+- `CF_ADC_SAR12_sar_refs` is not PG-wrapped this round (west-edge `vssd`).
+- `CF_ADC_SAR12_sar_refs` Liberty does not include analog buses `vref[4:0]`,
+  `S_LV[7:0]`, `muxsarref[2:0]`, or `PWR_CTRL_VREF[1:0]`.
 - `ibiasin` is a legacy pin; leave it unconnected.
-- Supply pins are `USE POWER` / `GROUND` with `DIRECTION INOUT` on this
-  abstract.
+- Analog wrap supplies use LEF `USE SIGNAL` so OpenLane will route them.
+- Liberty may still list leaf `vccd` / `vssd`; P&R uses the wrap LEF.
 - `en_csel_dft` is an output and `next` is an input on this abstract.
+- Public wrap uses Sky130 `prBoundary` 235/4, OBS on li1/met1/met2 blockage
+  datatype 10, north-halo met3 PG straps, full-height met4 `vpwr`/`vgnd`
+  notched around analog met4 pads, and a Magic `layout/mag` view.
 
 ## Tapeout History
 
@@ -229,3 +258,4 @@ a run returns.
 | Version | Date | Notes |
 |---|---|---|
 | 0.1.0 | 2026-09-04 | First unpublished IPM draft. Two public cells under `CF_ADC_SAR12*` names. Pinout-only customer docs. |
+| 0.2.0 | 2026-09-05 | SRAM-style PG wrap: analog leaf is `CF_ADC_SAR12_core`; customer `CF_ADC_SAR12` exposes chip PDN `vpwr`/`vgnd`. Companion `CF_ADC_SAR12_sar_refs` remains unwrapped. Liberty shipped. |

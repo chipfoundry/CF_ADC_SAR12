@@ -112,9 +112,9 @@
 <line x1="178" y1="1102" x2="178" y2="1116" stroke="#222" stroke-width="1.25"/>
 <text x="178" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vdda</text>
 <line x1="240" y1="1102" x2="240" y2="1116" stroke="#222" stroke-width="1.25"/>
-<text x="240" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vssd</text>
+<text x="240" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vgnd</text>
 <line x1="302" y1="1102" x2="302" y2="1116" stroke="#222" stroke-width="1.25"/>
 <text x="302" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vssa</text>
 <line x1="364" y1="1102" x2="364" y2="1116" stroke="#222" stroke-width="1.25"/>
-<text x="364" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vccd</text>
+<text x="364" y="1130" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="10" fill="#111">vpwr</text>
 </svg>

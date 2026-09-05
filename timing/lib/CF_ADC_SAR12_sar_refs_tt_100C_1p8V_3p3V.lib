@@ -1,0 +1,393 @@
+library ("CF_ADC_SAR12_sar_refs_tt_100C_1p8V_3p3V") {
+	define(signal_voltage_type,pin,string);
+	define(signal_voltage_type,bus,string);
+	define(always_on,pin,boolean);
+	define(is_macro_cell, cell, boolean);
+	date : "Wednesday, 09 March, 2011";
+	technology("cmos");
+	delay_model : "table_lookup";
+	power_model : "table_lookup";
+	library_features("report_delay_calculation");
+	capacitive_load_unit(1.000000, \
+		"pf");
+	pulling_resistance_unit : "1kohm";
+	time_unit : "1ns";
+	voltage_unit : "1V";
+	current_unit : "1mA";
+	leakage_power_unit : "1nW";
+	default_inout_pin_cap : 0.000000;
+	default_input_pin_cap : 0.000000;
+	default_output_pin_cap : 0.000000;
+	input_threshold_pct_rise : 50.000000;
+	input_threshold_pct_fall : 50.000000;
+	output_threshold_pct_rise : 50.000000;
+	output_threshold_pct_fall : 50.000000;
+	slew_lower_threshold_pct_fall : 20.000000;
+	slew_lower_threshold_pct_rise : 20.000000;
+	slew_upper_threshold_pct_fall : 80.000000;
+	slew_upper_threshold_pct_rise : 80.000000;
+	revision : 1.000000;
+	bus_naming_style : "%s[%d]";
+	simulation : true;
+	in_place_swap_mode : "match_footprint";
+	default_leakage_power_density : 0.000000;
+	slew_derate_from_library : 1.000000;
+	default_cell_leakage_power : 0.000000;
+	nom_process : 1.000000;
+	nom_temperature : 100.000000;
+	nom_voltage : 3.300000;
+	voltage_map("vdda",3.300000);
+	voltage_map("vda_int",3.300000);
+	voltage_map("VPUMP",3.000000);
+	voltage_map("vccd",1.800000);
+	voltage_map("vpwrd_int",1.800000);
+	voltage_map("vssa",0.000000);
+	voltage_map("vssa_shield",0.000000);
+	voltage_map("vssd",0.000000);
+	operating_conditions (Typ_ind) {
+		process : 1.000000;
+		voltage : 3.300000;
+		temperature : 100.000000;
+		tree_type : "balanced_tree";
+	}
+	type ("cypBus_2_0") {
+		base_type : "array";
+		bit_from : 2;
+		bit_to : 0;
+		bit_width : 3;
+		data_type : "bit";
+		downto : true;
+	}
+	type ("cypBus_4_0") {
+		base_type : "array";
+		bit_from : 4;
+		bit_to : 0;
+		bit_width : 5;
+		data_type : "bit";
+		downto : true;
+	}
+	type ("cypBus_7_0") {
+		base_type : "array";
+		bit_from : 7;
+		bit_to : 0;
+		bit_width : 8;
+		data_type : "bit";
+		downto : true;
+	}
+	type ("cypBus_1_0") {
+		base_type : "array";
+		bit_from : 1;
+		bit_to : 0;
+		bit_width : 2;
+		data_type : "bit";
+		downto : true;
+	}
+	cell ("CF_ADC_SAR12_sar_refs") {
+		switch_cell_type : fine_grain;
+		is_macro_cell : true ;
+                area : 63416.5 ;
+		is_macro_cell : true;
+               /* cell_leakage_power : 587545 ;*/
+ leakage_power() {
+      when : "!pd & !pd_vcmbuf & PD_BUF_VREF & !enable_hv";
+      value : 127007.17 ;
+      related_pg_pin : vdda;
+      }
+ leakage_power() {
+      when : "!pd & !pd_vcmbuf & PD_BUF_VREF & !enable_hv";
+      value : 50.17 ;
+      related_pg_pin : vccd;
+      }
+ leakage_power() {
+      when : "!pd & !pd_vcmbuf & !PD_BUF_VREF & !enable_hv";
+      value : 586420.4 ;
+      related_pg_pin : vdda;
+      }
+ leakage_power() {
+      when : "!pd & !pd_vcmbuf & !PD_BUF_VREF & !enable_hv";
+      value : 76.84 ;
+      related_pg_pin : vccd;
+      }
+
+  leakage_power() {
+      when : "pd&pd_vcmbuf&PD_BUF_VREF&!enable_hv" ;
+      value :  23.98;
+      related_pg_pin : vdda;
+      }
+  leakage_power() {
+      when : "pd&pd_vcmbuf&PD_BUF_VREF&!enable_hv" ;
+      value :  1.11;
+      related_pg_pin : vccd;
+      }
+		pg_pin ("VPUMP") {
+			pg_type : "primary_power";
+			voltage_name : "VPUMP";
+			direction : input;
+		}
+		pg_pin (vccd) {
+			pg_type : "primary_power";
+			voltage_name : "vccd";
+			direction : input;
+		}
+		pg_pin (vdda) {
+			pg_type : "primary_power";
+			voltage_name : "vdda";
+			direction : input;
+		}
+		pg_pin (vssa) {
+			pg_type : "primary_ground";
+			voltage_name : "vssa";
+			direction : input;
+		}
+		pg_pin ("vssa_shield") {
+			pg_type : "primary_ground";
+			voltage_name : "vssa_shield";
+			direction : input;
+		}
+		pg_pin (vssd) {
+			pg_type : "primary_ground";
+			voltage_name : "vssd";
+			direction : input;
+		}
+                pg_pin (vda_int) {
+                        pg_type : internal_power;
+                        voltage_name : vda_int;
+                        direction : output;
+                        switch_function : "pd|pd_ana";
+                        pg_function : "vdda";   
+                }
+                pg_pin (vpwrd_int) {
+                        pg_type : internal_power;
+                        voltage_name : vpwrd_int;
+                        direction : output;
+                        switch_function : "pd|pd_ana";
+                        pg_function : "vccd";   
+                }
+		pin ("sw_holdb") {
+			direction : "input";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			max_transition : 3.750000;
+	capacitance : 0.224012;
+		}
+		pin ("enpdb_hv") {
+			direction : "input";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			max_transition : 3.750000;
+	capacitance : 0.037185;
+		}
+		pin ("enable_hv") {
+			direction : "input";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			max_transition : 3.750000;
+	capacitance : 0.066298;
+		}
+		pin (pd_ana) {
+			direction : "input";
+                        switch_pin : true;
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 30.00000;
+	capacitance : 0.173527;
+                        always_on : true; 
+		}
+		pin (pd) {
+			direction : "input";
+                        switch_pin : true;
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 30.00000;
+	capacitance : 0.227184;
+                        always_on : true; 
+		}
+		pin ("refout_en") {
+			direction : "input";
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.016326;
+		}
+		bus (muxsarref) {
+			bus_type : "cypBus_2_0";
+			direction : "input";
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.019364;
+						timing(){
+                          related_pin : "sw_holdb"
+                          timing_type : non_seq_setup_rising;
+                            when : "!pd_ana";
+                            sdf_cond : "pd_ana == 1'b0";
+                          rise_constraint (scalar){
+                            values("0");
+                            }
+                          fall_constraint (scalar){
+                            values("0");
+                            }
+                          }
+                        timing(){
+                          related_pin : "sw_holdb"
+                          timing_type : non_seq_setup_falling;
+                            when : "!pd_ana";
+                            sdf_cond : "pd_ana == 1'b0";
+                          rise_constraint (scalar){
+                            values("0");
+                            }
+                          fall_constraint (scalar){
+                            values("0");
+                            }
+                          }
+                        timing(){
+                          related_pin : "sw_holdb"
+                          timing_type : non_seq_hold_falling;
+                            when : "!pd_ana";
+                            sdf_cond : "pd_ana== 1'b0";
+                          rise_constraint (scalar){
+                            values("6.0");
+                            }
+                          fall_constraint (scalar){
+                            values("6.0");
+                            }
+                        }
+		}
+		bus (vref) {
+			bus_type : "cypBus_4_0";
+			direction : "input";
+			signal_voltage_type : "analog";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			/* max_transition : 3.750000; */
+	capacitance : 0.057634;
+		}
+		bus ("S_LV") {
+			bus_type : "cypBus_7_0";
+			direction : "input";
+			related_power_pin : "vpwrd_int";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.021902;
+		}
+		bus ("PWR_CTRL_VREF") {
+			bus_type : "cypBus_1_0";
+			direction : "input";
+			related_power_pin : "vpwrd_int";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.037105;
+		}
+		pin ("PD_BUF_VREF") {
+			direction : "input";
+			related_power_pin : "vpwrd_int";
+			related_ground_pin : "vssd";
+			max_transition : 30.00000;
+	capacitance : 0.114947;
+		}
+		pin ("pd_vcmbuf") {
+			direction : "input";
+			related_power_pin : "vpwrd_int";
+			related_ground_pin : "vssd";
+			max_transition : 30.00000;
+	capacitance : 0.085179;
+		}
+		pin ("IREF_VREFBUF") {
+			direction : "input";
+			signal_voltage_type : "analog";
+			related_power_pin : "vda_int";
+			related_ground_pin : "vssa";
+			/* max_transition : 3.750000; */
+	capacitance : 0.010395;
+		}
+		pin ("IREF_VCMBUF") {
+			direction : "input";
+			signal_voltage_type : "analog";
+			related_power_pin : "vda_int";
+			related_ground_pin : "vssa";
+			/* max_transition : 3.750000; */
+	capacitance : 0.016371;
+		}
+		pin ("EN_RESVDA") {
+			direction : "input";
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.020392;
+		}
+		pin (hiz) {
+			direction : "input";
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.010414;
+		}
+		pin (dft_comp_en) {
+			direction : "input";
+			related_power_pin : "vccd";
+			related_ground_pin : "vssd";
+			max_transition : 1.500000;
+	capacitance : 0.010414;
+		}
+		/*pin (VPUMP) {
+			direction : "input";
+			related_power_pin : "";
+			related_ground_pin : "vssa";
+			max_transition : 3.750000;
+	capacitance : 0.000000;
+		}*/
+		pin ("sw_start") {
+			direction : "input";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			max_transition : 3.750000;
+	capacitance : 0.118445;
+		}
+        pin ("en_pxin_cap") {
+            direction : "output";
+            signal_voltage_type : "analog";
+            related_power_pin : "VPUMP";
+            related_ground_pin : "vssa";
+        }
+		pin (REFBY2) {
+			direction : "output";
+			signal_voltage_type : "analog";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			/* max_capacitance : 0.28; */
+		}
+		pin (REFHI) {
+			direction : "output";
+			signal_voltage_type : "analog";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			/* max_capacitance : 2.02; */
+		}
+		pin (refout) {
+			direction : "output";
+			signal_voltage_type : "analog";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			/* max_capacitance : 0.28; */
+		}
+		pin (px) {
+			direction : "inout";
+			signal_voltage_type : "analog";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			/* max_transition : 3.750000; */
+			capacitance : 0.010000;
+			/* max_capacitance : 0.28; */
+		}
+		pin ("px_in") {
+			direction : "inout";
+			signal_voltage_type : "analog";
+			related_power_pin : "vdda";
+			related_ground_pin : "vssa";
+			/* max_transition : 3.750000; */
+			capacitance : 0.010000;
+			/* max_capacitance : 0.28; */
+		}
+	}
+	default_operating_conditions : "Typ_ind";
+}
