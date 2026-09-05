@@ -6,11 +6,10 @@ Draft for designer review. Electrical values below are transcribed from the
 packaging source extract. The public GDS is an abstract; ChipFoundry
 substitutes protected full geometry at tapeout.
 
-This package ships an SRAM-style PG wrap `CF_ADC_SAR12` around analog leaf
-`CF_ADC_SAR12_core`, plus companion `CF_ADC_SAR12_sar_refs` (unwrapped
-reference system). Instantiate `CF_ADC_SAR12`. Place `CF_ADC_SAR12_sar_refs`
-and wire `REFHI` / `REFBY2` into `vrefhi` / `refby2` unless you are using an
-external reference.
+This package ships SRAM-style PG wraps: customer `CF_ADC_SAR12` around analog
+leaf `CF_ADC_SAR12_core`, and customer `CF_ADC_SAR12_sar_refs` around
+`CF_ADC_SAR12_sar_refs_core`. Instantiate both. Wire `REFHI` / `REFBY2` into
+`vrefhi` / `refby2` unless you are using an external reference.
 
 ## Overview
 
@@ -30,30 +29,30 @@ An external-reference mode is supported: drive `vrefhi` / `vreflo` /
 outputs when system-level accuracy requires it.
 
 Customer cell `CF_ADC_SAR12` is 503.24 × 533 µm (15 µm halo around analog
-leaf 473.24 × 503 µm). The reference macro is 503 × 129.835 µm. Chip PDN is
-`vpwr` / `vgnd`. Vendor digital pads `vccd` / `vssd` are tied inside the
+leaf 473.24 × 503 µm). Companion wrap `CF_ADC_SAR12_sar_refs` is 533 ×
+159.835 µm (15 µm halo around leaf 503 × 129.835 µm). Chip PDN on both is
+`vpwr` / `vgnd`. Vendor digital pads `vccd` / `vssd` are tied inside each
 wrap. Analog supplies stay wrap ports.
 
 ## Installation
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_SAR12 --version 0.2.0 --include-drafts
+ipm install CF_ADC_SAR12 --version 0.2.1 --include-drafts
 ```
 
 Until the marketplace listing is published, install from a local catalog
 override the same way `cf-adc-sar12-test-project` does:
 
 ```bash
-ipm install CF_ADC_SAR12 --version 0.2.0 --include-drafts --local-file ip/catalog.json
+ipm install CF_ADC_SAR12 --version 0.2.1 --include-drafts --local-file ip/catalog.json
 ```
 
-Use `hdl/gl/CF_ADC_SAR12.v` as the customer blackbox, `layout/lef/CF_ADC_SAR12.lef`
-for P&R, and `layout/gds/CF_ADC_SAR12.gds` / `layout/mag/CF_ADC_SAR12.mag` for
-the public wrap. `CF_ADC_SAR12_core` is the analog leaf (empty Verilog,
-pin-only abstract). ChipFoundry substitutes vault GDS into
-`CF_ADC_SAR12_core` at tapeout. `timing/lib/` is the characterized analog
-view; P&R uses the wrap LEF (`vpwr` / `vgnd` plus analog supplies).
+Use `hdl/gl/CF_ADC_SAR12.v` and `hdl/gl/CF_ADC_SAR12_sar_refs.v` as the
+customer blackboxes. P&R uses the wrap LEFs. `*_core` cells are analog
+leaves (empty Verilog, pin-only abstracts). ChipFoundry substitutes vault
+GDS into the core cells at tapeout. `timing/lib/` is the characterized analog
+view; P&R uses wrap LEF (`vpwr` / `vgnd` plus analog supplies).
 
 ## Features
 
@@ -168,7 +167,12 @@ instance.
 
 ### `CF_ADC_SAR12_sar_refs`
 
-Unwrapped companion. Supplies remain vendor `vccd` / `vssd` plus analog rails.
+SRAM-style PG wrap around analog leaf `CF_ADC_SAR12_sar_refs_core`. Customer
+chip PDN is `vpwr` / `vgnd`. Vendor `vccd` / `vssd` are tied inside. Analog
+rails stay wrap ports with LEF `USE SIGNAL`.
+
+In OpenLane / LibreLane, add
+`PDN_MACRO_CONNECTIONS: "u_cf_adc_sar12_sar_refs vccd1 vssd1 vpwr vgnd"`.
 
 | Pin | Direction | Width | Notes |
 |---|---|---:|---|
@@ -199,10 +203,10 @@ Unwrapped companion. Supplies remain vendor `vccd` / `vssd` plus analog rails.
 | vda_int | output | 1 | Internal analog supply |
 | vpwrd_int | output | 1 | Internal digital supply |
 | vdda | inout | 1 | Analog supply |
-| vccd | inout | 1 | Digital supply (unwrapped) |
+| vpwr | input | 1 | Chip digital supply |
 | VPUMP | inout | 1 | Charge-pump supply |
 | vssa | inout | 1 | Analog ground |
-| vssd | inout | 1 | Digital ground (unwrapped) |
+| vgnd | input | 1 | Chip digital ground |
 | vssa_shield | inout | 1 | Shield ground |
 
 ## Specifications
@@ -220,7 +224,8 @@ are on the abstract only.
 | Analog inputs | Differential `vinp` / `vinm` |
 | Customer wrap | 503.24 × 533 µm |
 | Analog leaf | 473.24 × 503 µm |
-| Reference-macro size | 503 × 129.835 µm |
+| Reference wrap | 533 × 159.835 µm |
+| Reference leaf | 503 × 129.835 µm |
 | Process | SkyWater 130 nm |
 
 ## Timing Diagram
@@ -234,12 +239,14 @@ view.
 
 - Verilog in `hdl/gl/CF_ADC_SAR12.v` is a structural wrap around an empty
   `CF_ADC_SAR12_core` blackbox, not a SPICE-accurate model.
-- `CF_ADC_SAR12_sar_refs` is not PG-wrapped this round (west-edge `vssd`).
 - `CF_ADC_SAR12_sar_refs` Liberty does not include analog buses `vref[4:0]`,
   `S_LV[7:0]`, `muxsarref[2:0]`, or `PWR_CTRL_VREF[1:0]`.
 - `ibiasin` is a legacy pin; leave it unconnected.
 - Analog wrap supplies use LEF `USE SIGNAL` so OpenLane will route them.
 - Liberty may still list leaf `vccd` / `vssd`; P&R uses the wrap LEF.
+- West-edge `CF_ADC_SAR12_sar_refs` controls are vendor-skinny (~0.15–0.28 µm).
+  OpenLane detailed routing may not find an access point; the test project
+  connects analog and chip PDN.
 - `en_csel_dft` is an output and `next` is an input on this abstract.
 - Public wrap uses Sky130 `prBoundary` 235/4, OBS on li1/met1/met2 blockage
   datatype 10, north-halo met3 PG straps, full-height met4 `vpwr`/`vgnd`
@@ -259,3 +266,4 @@ a run returns.
 |---|---|---|
 | 0.1.0 | 2026-09-04 | First unpublished IPM draft. Two public cells under `CF_ADC_SAR12*` names. Pinout-only customer docs. |
 | 0.2.0 | 2026-09-05 | SRAM-style PG wrap: analog leaf is `CF_ADC_SAR12_core`; customer `CF_ADC_SAR12` exposes chip PDN `vpwr`/`vgnd`. Companion `CF_ADC_SAR12_sar_refs` remains unwrapped. Liberty shipped. |
+| 0.2.1 | 2026-09-05 | Wrap companion `CF_ADC_SAR12_sar_refs` around `CF_ADC_SAR12_sar_refs_core` (west-edge met3 `vssd` onto the ground strap). Four public cells. |

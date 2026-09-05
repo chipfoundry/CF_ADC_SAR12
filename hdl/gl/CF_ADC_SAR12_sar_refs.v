@@ -1,15 +1,13 @@
-// Verilog HDL for "CF_ADC_SAR12", "CF_ADC_SAR12_sar_refs" "behavioral"
-// Blackbox stub for top-level integration. Analog behavior is not modeled.
-// Ports match public abstract MACRO CF_ADC_SAR12_sar_refs.
-
+// Structural PG wrapper. Analog leaf is CF_ADC_SAR12_sar_refs_core.
+// Customer rails are vpwr/vgnd; well taps vpb/vnb/vpbe are tied inside.
 module CF_ADC_SAR12_sar_refs (
     vdda,
     vda_int,
-    vccd,
+    vpwr,
     vpwrd_int,
     VPUMP,
     vssa,
-    vssd,
+    vgnd,
     vref,
     pd,
     hiz,
@@ -38,11 +36,11 @@ module CF_ADC_SAR12_sar_refs (
 );
     inout vdda;
     output vda_int;
-    inout vccd;
+    input vpwr;
     output vpwrd_int;
     inout VPUMP;
     inout vssa;
-    inout vssd;
+    input vgnd;
     input [4:0] vref;
     input pd;
     input hiz;
@@ -68,12 +66,38 @@ module CF_ADC_SAR12_sar_refs (
     input PD_BUF_VREF;
     inout vssa_shield;
     input dft_comp_en;
-
-    assign vda_int = 1'b0;
-    assign vpwrd_int = 1'b0;
-    assign REFBY2 = 1'b0;
-    assign refout = 1'b0;
-    assign en_pxin_cap = 1'b0;
-    assign REFHI = 1'b0;
-
+    CF_ADC_SAR12_sar_refs_core u_core (
+        .vdda(vdda),
+        .vda_int(vda_int),
+        .vccd(vpwr),
+        .vpwrd_int(vpwrd_int),
+        .VPUMP(VPUMP),
+        .vssa(vssa),
+        .vssd(vgnd),
+        .vref(vref),
+        .pd(pd),
+        .hiz(hiz),
+        .PWR_CTRL_VREF(PWR_CTRL_VREF),
+        .muxsarref(muxsarref),
+        .REFBY2(REFBY2),
+        .pd_ana(pd_ana),
+        .EN_RESVDA(EN_RESVDA),
+        .IREF_VCMBUF(IREF_VCMBUF),
+        .sw_start(sw_start),
+        .pd_vcmbuf(pd_vcmbuf),
+        .S_LV(S_LV),
+        .px_in(px_in),
+        .px(px),
+        .refout(refout),
+        .refout_en(refout_en),
+        .sw_holdb(sw_holdb),
+        .enpdb_hv(enpdb_hv),
+        .en_pxin_cap(en_pxin_cap),
+        .REFHI(REFHI),
+        .enable_hv(enable_hv),
+        .IREF_VREFBUF(IREF_VREFBUF),
+        .PD_BUF_VREF(PD_BUF_VREF),
+        .vssa_shield(vssa_shield),
+        .dft_comp_en(dft_comp_en)
+    );
 endmodule

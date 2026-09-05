@@ -7,7 +7,7 @@ info:
   license: proprietary
   author: ChipFoundry
   email: support@chipfoundry.io
-  version: 0.2.0
+  version: 0.2.1
   date: 9-5-2026
   category: digital
   tags:
@@ -21,4 +21,4 @@ info:
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a
   clock_freq_mhz: '18'
-  cell_count: '3'
+  cell_count: '4'
