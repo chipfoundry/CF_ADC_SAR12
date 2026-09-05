@@ -38,14 +38,14 @@ wrap. Analog supplies stay wrap ports.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_SAR12 --version 0.2.1 --include-drafts
+ipm install CF_ADC_SAR12 --version 0.2.2 --include-drafts
 ```
 
 Until the marketplace listing is published, install from a local catalog
 override the same way `cf-adc-sar12-test-project` does:
 
 ```bash
-ipm install CF_ADC_SAR12 --version 0.2.1 --include-drafts --local-file ip/catalog.json
+ipm install CF_ADC_SAR12 --version 0.2.2 --include-drafts --local-file ip/catalog.json
 ```
 
 Use `hdl/gl/CF_ADC_SAR12.v` and `hdl/gl/CF_ADC_SAR12_sar_refs.v` as the
@@ -53,6 +53,10 @@ customer blackboxes. P&R uses the wrap LEFs. `*_core` cells are analog
 leaves (empty Verilog, pin-only abstracts). ChipFoundry substitutes vault
 GDS into the core cells at tapeout. `timing/lib/` is the characterized analog
 view; P&R uses wrap LEF (`vpwr` / `vgnd` plus analog supplies).
+
+For functional simulation, compile `verify/beh_model/*_core.v` **instead of**
+the empty `hdl/gl/*_core.v` stubs. The behavioral cores are an ideal
+quantizer, not silicon. See `verify/beh_model/README.md`.
 
 ## Features
 
@@ -62,6 +66,7 @@ view; P&R uses wrap LEF (`vpwr` / `vgnd` plus analog supplies).
 - On-macro reference system with mux and buffer (`CF_ADC_SAR12_sar_refs`)
 - External reference mode via `vrefhi` / `vreflo` / `refby2`
 - 12-bit `data_out` with `sof` / `eof` framing
+- Ideal Verilog behavioral model under `verify/beh_model/` for functional sim
 - Separate analog (`pd_ana`) and block (`pd`) power-down
 - Customer cell `CF_ADC_SAR12` 503.24 × 533 µm (15 µm halo around analog leaf 473.24 × 503 µm)
 - Chip PDN is `vpwr` / `vgnd`. Vendor `vccd` / `vssd` are tied inside the wrap.
@@ -230,15 +235,20 @@ are on the abstract only.
 
 ## Timing Diagram
 
-A conversion starts when `sof` is asserted with `refclk` running and `pd` /
-`pd_ana` held inactive. `data_out[11:0]` is valid when `eof` rises. Copy
-setup/hold and the `sample_width` field encoding from the matching Liberty
-view.
+A conversion starts when `sof` is sampled high on `refclk` with `pd` /
+`pd_ana` inactive and `enable_hv` high. The behavioral model then samples
+for `max(sample_width, 1)` clocks and converts for `nbits + 1` clocks.
+`data_out[11:0]` is valid in the same cycle `eof` rises (`eof` is one
+`refclk` wide). `resolution` `2'b01` / `2'b10` select 10- / 8-bit
+left-justified results; anything else is 12-bit. Liberty remains the STA
+timing view; this framing is an ideal assumption, not an Infineon
+programming spec.
 
 ## Limitations and Open Issues
 
-- Verilog in `hdl/gl/CF_ADC_SAR12.v` is a structural wrap around an empty
-  `CF_ADC_SAR12_core` blackbox, not a SPICE-accurate model.
+- Verilog in `hdl/gl/CF_ADC_SAR12.v` is a structural wrap around
+  `CF_ADC_SAR12_core`. P&R uses the empty `hdl/gl` blackbox. Functional sim
+  uses `verify/beh_model/CF_ADC_SAR12_core.v` (ideal quantizer, not SPICE).
 - `CF_ADC_SAR12_sar_refs` Liberty does not include analog buses `vref[4:0]`,
   `S_LV[7:0]`, `muxsarref[2:0]`, or `PWR_CTRL_VREF[1:0]`.
 - `ibiasin` is a legacy pin; leave it unconnected.
@@ -267,3 +277,4 @@ a run returns.
 | 0.1.0 | 2026-09-04 | First unpublished IPM draft. Two public cells under `CF_ADC_SAR12*` names. Pinout-only customer docs. |
 | 0.2.0 | 2026-09-05 | SRAM-style PG wrap: analog leaf is `CF_ADC_SAR12_core`; customer `CF_ADC_SAR12` exposes chip PDN `vpwr`/`vgnd`. Companion `CF_ADC_SAR12_sar_refs` remains unwrapped. Liberty shipped. |
 | 0.2.1 | 2026-09-05 | Wrap companion `CF_ADC_SAR12_sar_refs` around `CF_ADC_SAR12_sar_refs_core` (west-edge met3 `vssd` onto the ground strap). Four public cells. |
+| 0.2.2 | 2026-09-05 | Ideal Verilog behavioral model under `verify/beh_model` for functional sim (`sof`/`eof` quantizer; not SPICE). |
