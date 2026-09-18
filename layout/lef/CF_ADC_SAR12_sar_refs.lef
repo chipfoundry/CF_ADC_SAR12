@@ -14,7 +14,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 137.39 17.5 142.085 ;
       LAYER met3 ;
-        RECT 15 137.39 17.5 142.14 ;
+        RECT 8.5 137.39 17.5 142.14 ;
     END
   END vdda
   PIN vda_int
@@ -24,7 +24,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 131.39 17.5 136.39 ;
       LAYER met3 ;
-        RECT 15 131.39 17.5 136.39 ;
+        RECT 8.5 131.39 17.5 136.39 ;
     END
   END vda_int
   PIN vpwr
@@ -66,7 +66,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 119.39 17.5 124.39 ;
       LAYER met3 ;
-        RECT 15 119.39 17.5 124.39 ;
+        RECT 8.5 119.39 17.5 124.39 ;
     END
   END vpwrd_int
   PIN VPUMP
@@ -76,7 +76,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 92.69 17.5 97.69 ;
       LAYER met3 ;
-        RECT 15 92.69 17.5 97.69 ;
+        RECT 8.5 92.69 17.5 97.69 ;
     END
   END VPUMP
   PIN vssa
@@ -84,32 +84,32 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 517.355 31.89 518.155 32.19 ;
+        RECT 517.505 31.8 518.005 32.28 ;
       LAYER met2 ;
         RECT 517.505 31.9 533 32.18 ;
       LAYER met3 ;
-        RECT 517.355 28.76 518.155 29.06 ;
+        RECT 517.505 28.67 518.005 29.15 ;
       LAYER met2 ;
         RECT 517.505 28.77 533 29.05 ;
       LAYER met3 ;
-        RECT 517.355 25.63 518.155 25.93 ;
+        RECT 517.505 25.54 518.005 26.02 ;
       LAYER met2 ;
         RECT 517.505 25.64 533 25.92 ;
       LAYER met3 ;
-        RECT 14.85 28.04 15.65 28.34 ;
+        RECT 8.5 28.04 15.8 28.34 ;
       LAYER met2 ;
         RECT 0 28.05 15.495 28.33 ;
       LAYER met3 ;
-        RECT 14.85 31.17 15.65 31.47 ;
+        RECT 8.5 31.17 15.8 31.47 ;
       LAYER met2 ;
         RECT 0 31.18 15.495 31.46 ;
         RECT 0 34.31 15.495 34.59 ;
       LAYER met3 ;
-        RECT 14.85 34.3 15.65 34.6 ;
+        RECT 8.5 34.3 15.8 34.6 ;
       LAYER met2 ;
         RECT 0 113.475 17.38 118.39 ;
       LAYER met3 ;
-        RECT 15 113.475 17.5 118.39 ;
+        RECT 8.5 113.475 17.5 118.39 ;
     END
   END vssa
   PIN vgnd
@@ -118,8 +118,8 @@ MACRO CF_ADC_SAR12_sar_refs
     PORT
       LAYER met3 ;
         RECT 15 35.045 17.5 39.695 ;
-        RECT 7.26 37.13 15 37.61 ;
-        RECT 7.26 37.13 7.74 148.435 ;
+        RECT 2.26 35.045 17.5 39.695 ;
+        RECT 2.26 35.045 2.74 148.435 ;
         RECT 1.23 145.335 531.77 148.435 ;
       LAYER met4 ;
         RECT 20 0 23.1 159.835 ;
@@ -186,7 +186,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.96 58.51 15.76 58.81 ;
+        RECT 8.5 58.51 15.8 58.81 ;
       LAYER met2 ;
         RECT 0 58.53 15.715 58.79 ;
     END
@@ -196,7 +196,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.96 57.88 15.76 58.18 ;
+        RECT 8.5 57.88 15.8 58.18 ;
       LAYER met2 ;
         RECT 0 57.9 15.715 58.16 ;
     END
@@ -248,7 +248,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.96 59.14 15.76 59.44 ;
+        RECT 8.5 59.14 15.8 59.44 ;
       LAYER met2 ;
         RECT 0 59.16 15.715 59.42 ;
     END
@@ -276,7 +276,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.96 63.5 15.76 63.8 ;
+        RECT 8.5 63.5 15.8 63.8 ;
       LAYER met2 ;
         RECT 0 63.52 15.715 63.78 ;
     END
@@ -308,7 +308,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 109.16 15.915 109.49 ;
       LAYER met3 ;
-        RECT 15 109.16 15.915 109.49 ;
+        RECT 8.5 109.16 15.915 109.49 ;
     END
   END S_LV[7]
   PIN px_in
@@ -322,7 +322,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 28.8 16.435 30.71 ;
       LAYER met3 ;
-        RECT 15 28.8 16.435 30.71 ;
+        RECT 8.5 28.8 16.435 30.71 ;
     END
   END px_in
   PIN px
@@ -336,7 +336,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 31.935 16.435 33.845 ;
       LAYER met3 ;
-        RECT 15 31.935 16.435 33.845 ;
+        RECT 8.5 31.935 16.435 33.845 ;
     END
   END px
   PIN refout
@@ -352,7 +352,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.96 53.275 15.76 53.575 ;
+        RECT 8.5 53.275 15.8 53.575 ;
       LAYER met2 ;
         RECT 0 53.295 15.715 53.555 ;
     END
@@ -362,7 +362,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.795 46.815 15.595 47.115 ;
+        RECT 8.5 46.815 15.8 47.115 ;
       LAYER met2 ;
         RECT 0 46.835 15.39 47.095 ;
     END
@@ -372,7 +372,7 @@ MACRO CF_ADC_SAR12_sar_refs
     USE SIGNAL ;
     PORT
       LAYER met3 ;
-        RECT 14.895 46.165 15.695 46.465 ;
+        RECT 8.5 46.165 15.8 46.465 ;
       LAYER met2 ;
         RECT 0 46.22 15.585 46.41 ;
     END
@@ -392,7 +392,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 106.89 15.915 107.22 ;
       LAYER met3 ;
-        RECT 15 106.89 15.915 107.22 ;
+        RECT 8.5 106.89 15.915 107.22 ;
     END
   END S_LV[6]
   PIN S_LV[5]
@@ -402,7 +402,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 107.52 15.915 107.85 ;
       LAYER met3 ;
-        RECT 15 107.52 15.915 107.85 ;
+        RECT 8.5 107.52 15.915 107.85 ;
     END
   END S_LV[5]
   PIN S_LV[4]
@@ -412,7 +412,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 109.84 15.915 110.17 ;
       LAYER met3 ;
-        RECT 15 109.84 15.915 110.17 ;
+        RECT 8.5 109.84 15.915 110.17 ;
     END
   END S_LV[4]
   PIN S_LV[3]
@@ -422,7 +422,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 110.52 15.915 110.85 ;
       LAYER met3 ;
-        RECT 15 110.52 15.915 110.85 ;
+        RECT 8.5 110.52 15.915 110.85 ;
     END
   END S_LV[3]
   PIN S_LV[2]
@@ -432,7 +432,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 111.2 15.915 111.53 ;
       LAYER met3 ;
-        RECT 15 111.2 15.915 111.53 ;
+        RECT 8.5 111.2 15.915 111.53 ;
     END
   END S_LV[2]
   PIN S_LV[1]
@@ -442,7 +442,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 111.88 15.915 112.21 ;
       LAYER met3 ;
-        RECT 15 111.88 15.915 112.21 ;
+        RECT 8.5 111.88 15.915 112.21 ;
     END
   END S_LV[1]
   PIN S_LV[0]
@@ -452,7 +452,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 112.56 15.915 112.89 ;
       LAYER met3 ;
-        RECT 15 112.56 15.915 112.89 ;
+        RECT 8.5 112.56 15.915 112.89 ;
     END
   END S_LV[0]
   PIN REFHI
@@ -498,7 +498,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 106.26 15.915 106.59 ;
       LAYER met3 ;
-        RECT 15 106.26 15.915 106.59 ;
+        RECT 8.5 106.26 15.915 106.59 ;
     END
   END vssa_shield
   PIN dft_comp_en
@@ -508,7 +508,7 @@ MACRO CF_ADC_SAR12_sar_refs
       LAYER met2 ;
         RECT 0 108.48 15.915 108.81 ;
       LAYER met3 ;
-        RECT 15 108.48 15.915 108.81 ;
+        RECT 8.5 108.48 15.915 108.81 ;
     END
   END dft_comp_en
   OBS
