@@ -38,14 +38,14 @@ wrap. Analog supplies stay wrap ports.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_SAR12 --version 0.2.3 --include-drafts
+ipm install CF_ADC_SAR12 --version 0.2.4 --include-drafts
 ```
 
 Until the marketplace listing is published, install from a local catalog
 override the same way `cf-adc-sar12-test-project` does:
 
 ```bash
-ipm install CF_ADC_SAR12 --version 0.2.3 --include-drafts --local-file ip/catalog.json
+ipm install CF_ADC_SAR12 --version 0.2.4 --include-drafts --local-file ip/catalog.json
 ```
 
 Use `hdl/gl/CF_ADC_SAR12.v` and `hdl/gl/CF_ADC_SAR12_sar_refs.v` as the
@@ -279,3 +279,4 @@ a run returns.
 | 0.2.1 | 2026-09-05 | Wrap companion `CF_ADC_SAR12_sar_refs` around `CF_ADC_SAR12_sar_refs_core` (west-edge met3 `vssd` onto the ground strap). Four public cells. |
 | 0.2.2 | 2026-09-05 | Ideal Verilog behavioral model under `verify/beh_model` for functional sim (`sof`/`eof` quantizer; not SPICE). |
 | 0.2.3 | 2026-09-17 | Regenerate both pin-only core GDS abstracts with drawing metal beneath every pin purpose so KLayout pin-label checks pass. |
+| 0.2.4 | 2026-09-18 | Magic-port stacked via landings so parent GRT and the labeled core port unique-match in precheck LVS. |
