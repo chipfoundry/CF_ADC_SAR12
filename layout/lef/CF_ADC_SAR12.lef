@@ -15,10 +15,6 @@ MACRO CF_ADC_SAR12
         RECT 99.7 517.545 99.96 533 ;
       LAYER met1 ;
         RECT 99.7 517.545 99.96 533 ;
-      LAYER met2 ;
-        RECT 99.69 525.135 99.97 525.415 ;
-      LAYER met1 ;
-        RECT 99.69 525.135 99.97 525.415 ;
     END
   END en_pump_lv
   PIN sample_width[1]
@@ -29,10 +25,6 @@ MACRO CF_ADC_SAR12
         RECT 423.49 517.2 423.79 518 ;
       LAYER met2 ;
         RECT 423.5 517.335 423.78 533 ;
-      LAYER met3 ;
-        RECT 423.465 517.495 423.815 517.845 ;
-      LAYER met2 ;
-        RECT 423.465 517.495 423.815 517.845 ;
     END
   END sample_width[1]
   PIN sample_width[3]
@@ -43,10 +35,6 @@ MACRO CF_ADC_SAR12
         RECT 425.58 517.2 425.88 518 ;
       LAYER met2 ;
         RECT 425.59 517.335 425.87 533 ;
-      LAYER met3 ;
-        RECT 425.555 517.495 425.905 517.845 ;
-      LAYER met2 ;
-        RECT 425.555 517.495 425.905 517.845 ;
     END
   END sample_width[3]
   PIN sample_width[4]
@@ -57,10 +45,6 @@ MACRO CF_ADC_SAR12
         RECT 426.65 517.2 426.95 518 ;
       LAYER met2 ;
         RECT 426.66 517.335 426.94 533 ;
-      LAYER met3 ;
-        RECT 426.625 517.495 426.975 517.845 ;
-      LAYER met2 ;
-        RECT 426.625 517.495 426.975 517.845 ;
     END
   END sample_width[4]
   PIN sample_width[5]
@@ -71,10 +55,6 @@ MACRO CF_ADC_SAR12
         RECT 427.62 517.2 427.92 518 ;
       LAYER met2 ;
         RECT 427.63 517.335 427.91 533 ;
-      LAYER met3 ;
-        RECT 427.595 517.495 427.945 517.845 ;
-      LAYER met2 ;
-        RECT 427.595 517.495 427.945 517.845 ;
     END
   END sample_width[5]
   PIN sample_width[6]
@@ -85,10 +65,6 @@ MACRO CF_ADC_SAR12
         RECT 428.74 517.2 429.04 518 ;
       LAYER met2 ;
         RECT 428.75 517.335 429.03 533 ;
-      LAYER met3 ;
-        RECT 428.715 517.495 429.065 517.845 ;
-      LAYER met2 ;
-        RECT 428.715 517.495 429.065 517.845 ;
     END
   END sample_width[6]
   PIN sample_width[7]
@@ -99,10 +75,6 @@ MACRO CF_ADC_SAR12
         RECT 429.71 517.2 430.01 518 ;
       LAYER met2 ;
         RECT 429.72 517.335 430 533 ;
-      LAYER met3 ;
-        RECT 429.685 517.495 430.035 517.845 ;
-      LAYER met2 ;
-        RECT 429.685 517.495 430.035 517.845 ;
     END
   END sample_width[7]
   PIN sample_width[8]
@@ -113,10 +85,6 @@ MACRO CF_ADC_SAR12
         RECT 430.705 517.2 431.005 518 ;
       LAYER met2 ;
         RECT 430.715 517.335 430.995 533 ;
-      LAYER met3 ;
-        RECT 430.68 517.495 431.03 517.845 ;
-      LAYER met2 ;
-        RECT 430.68 517.495 431.03 517.845 ;
     END
   END sample_width[8]
   PIN sample_width[9]
@@ -127,10 +95,6 @@ MACRO CF_ADC_SAR12
         RECT 432.49 517.2 432.79 518 ;
       LAYER met2 ;
         RECT 432.5 517.335 432.78 533 ;
-      LAYER met3 ;
-        RECT 432.465 517.495 432.815 517.845 ;
-      LAYER met2 ;
-        RECT 432.465 517.495 432.815 517.845 ;
     END
   END sample_width[9]
   PIN vreflo
@@ -151,10 +115,6 @@ MACRO CF_ADC_SAR12
         RECT 445.75 517.2 446.05 518 ;
       LAYER met2 ;
         RECT 445.76 517.335 446.04 533 ;
-      LAYER met3 ;
-        RECT 445.725 517.495 446.075 517.845 ;
-      LAYER met2 ;
-        RECT 445.725 517.495 446.075 517.845 ;
     END
   END resolution[0]
   PIN resolution[1]
@@ -165,10 +125,6 @@ MACRO CF_ADC_SAR12
         RECT 446.71 517.2 447.01 518 ;
       LAYER met2 ;
         RECT 446.72 517.335 447 533 ;
-      LAYER met3 ;
-        RECT 446.685 517.495 447.035 517.845 ;
-      LAYER met2 ;
-        RECT 446.685 517.495 447.035 517.845 ;
     END
   END resolution[1]
   PIN scan_test_mode
@@ -179,10 +135,6 @@ MACRO CF_ADC_SAR12
         RECT 457.34 517.2 457.64 518 ;
       LAYER met2 ;
         RECT 457.35 517.335 457.63 533 ;
-      LAYER met3 ;
-        RECT 457.315 517.495 457.665 517.845 ;
-      LAYER met2 ;
-        RECT 457.315 517.495 457.665 517.845 ;
     END
   END scan_test_mode
   PIN test_scanin
@@ -193,10 +145,6 @@ MACRO CF_ADC_SAR12
         RECT 458.575 517.2 458.875 518 ;
       LAYER met2 ;
         RECT 458.585 517.335 458.865 533 ;
-      LAYER met3 ;
-        RECT 458.55 517.495 458.9 517.845 ;
-      LAYER met2 ;
-        RECT 458.55 517.495 458.9 517.845 ;
     END
   END test_scanin
   PIN test_scanen
@@ -207,10 +155,6 @@ MACRO CF_ADC_SAR12
         RECT 459.535 517.2 459.835 518 ;
       LAYER met2 ;
         RECT 459.545 517.335 459.825 533 ;
-      LAYER met3 ;
-        RECT 459.51 517.495 459.86 517.845 ;
-      LAYER met2 ;
-        RECT 459.51 517.495 459.86 517.845 ;
     END
   END test_scanen
   PIN test_scanout
@@ -221,10 +165,6 @@ MACRO CF_ADC_SAR12
         RECT 460.495 517.2 460.795 518 ;
       LAYER met2 ;
         RECT 460.505 517.335 460.785 533 ;
-      LAYER met3 ;
-        RECT 460.47 517.495 460.82 517.845 ;
-      LAYER met2 ;
-        RECT 460.47 517.495 460.82 517.845 ;
     END
   END test_scanout
   PIN en_csel_dft
@@ -235,10 +175,6 @@ MACRO CF_ADC_SAR12
         RECT 461.455 517.2 461.755 518 ;
       LAYER met2 ;
         RECT 461.465 517.335 461.745 533 ;
-      LAYER met3 ;
-        RECT 461.43 517.495 461.78 517.845 ;
-      LAYER met2 ;
-        RECT 461.43 517.495 461.78 517.845 ;
     END
   END en_csel_dft
   PIN sel_csel_dft[0]
@@ -249,10 +185,6 @@ MACRO CF_ADC_SAR12
         RECT 462.49 517.2 462.79 518 ;
       LAYER met2 ;
         RECT 462.5 517.335 462.78 533 ;
-      LAYER met3 ;
-        RECT 462.465 517.495 462.815 517.845 ;
-      LAYER met2 ;
-        RECT 462.465 517.495 462.815 517.845 ;
     END
   END sel_csel_dft[0]
   PIN sel_csel_dft[2]
@@ -263,10 +195,6 @@ MACRO CF_ADC_SAR12
         RECT 463.925 517.2 464.225 518 ;
       LAYER met2 ;
         RECT 463.935 517.335 464.215 533 ;
-      LAYER met3 ;
-        RECT 463.9 517.495 464.25 517.845 ;
-      LAYER met2 ;
-        RECT 463.9 517.495 464.25 517.845 ;
     END
   END sel_csel_dft[2]
   PIN sel_csel_dft[3]
@@ -277,10 +205,6 @@ MACRO CF_ADC_SAR12
         RECT 465.295 517.2 465.595 518 ;
       LAYER met2 ;
         RECT 465.305 517.335 465.585 533 ;
-      LAYER met3 ;
-        RECT 465.27 517.495 465.62 517.845 ;
-      LAYER met2 ;
-        RECT 465.27 517.495 465.62 517.845 ;
     END
   END sel_csel_dft[3]
   PIN hiz
@@ -291,10 +215,6 @@ MACRO CF_ADC_SAR12
         RECT 466.33 517.2 466.63 518 ;
       LAYER met2 ;
         RECT 466.34 517.335 466.62 533 ;
-      LAYER met3 ;
-        RECT 466.305 517.495 466.655 517.845 ;
-      LAYER met2 ;
-        RECT 466.305 517.495 466.655 517.845 ;
     END
   END hiz
   PIN sof
@@ -305,10 +225,6 @@ MACRO CF_ADC_SAR12
         RECT 467.73 517.2 468.03 518 ;
       LAYER met2 ;
         RECT 467.74 517.335 468.02 533 ;
-      LAYER met3 ;
-        RECT 467.705 517.495 468.055 517.845 ;
-      LAYER met2 ;
-        RECT 467.705 517.495 468.055 517.845 ;
     END
   END sof
   PIN test_sea
@@ -319,10 +235,6 @@ MACRO CF_ADC_SAR12
         RECT 468.74 517.2 469.04 518 ;
       LAYER met2 ;
         RECT 468.75 517.335 469.03 533 ;
-      LAYER met3 ;
-        RECT 468.715 517.495 469.065 517.845 ;
-      LAYER met2 ;
-        RECT 468.715 517.495 469.065 517.845 ;
     END
   END test_sea
   PIN reset_n
@@ -333,10 +245,6 @@ MACRO CF_ADC_SAR12
         RECT 469.39 517.2 469.69 518 ;
       LAYER met2 ;
         RECT 469.4 517.335 469.68 533 ;
-      LAYER met3 ;
-        RECT 469.365 517.495 469.715 517.845 ;
-      LAYER met2 ;
-        RECT 469.365 517.495 469.715 517.845 ;
     END
   END reset_n
   PIN eof
@@ -347,10 +255,6 @@ MACRO CF_ADC_SAR12
         RECT 472.57 517.2 472.87 518 ;
       LAYER met2 ;
         RECT 472.58 517.335 472.86 533 ;
-      LAYER met3 ;
-        RECT 472.545 517.495 472.895 517.845 ;
-      LAYER met2 ;
-        RECT 472.545 517.495 472.895 517.845 ;
     END
   END eof
   PIN data_out[0]
@@ -361,10 +265,6 @@ MACRO CF_ADC_SAR12
         RECT 473.22 517.2 473.52 518 ;
       LAYER met2 ;
         RECT 473.23 517.335 473.51 533 ;
-      LAYER met3 ;
-        RECT 473.195 517.495 473.545 517.845 ;
-      LAYER met2 ;
-        RECT 473.195 517.495 473.545 517.845 ;
     END
   END data_out[0]
   PIN data_out[3]
@@ -375,10 +275,6 @@ MACRO CF_ADC_SAR12
         RECT 475.17 517.2 475.47 518 ;
       LAYER met2 ;
         RECT 475.18 517.335 475.46 533 ;
-      LAYER met3 ;
-        RECT 475.145 517.495 475.495 517.845 ;
-      LAYER met2 ;
-        RECT 475.145 517.495 475.495 517.845 ;
     END
   END data_out[3]
   PIN data_out[4]
@@ -389,10 +285,6 @@ MACRO CF_ADC_SAR12
         RECT 475.82 517.2 476.12 518 ;
       LAYER met2 ;
         RECT 475.83 517.335 476.11 533 ;
-      LAYER met3 ;
-        RECT 475.795 517.495 476.145 517.845 ;
-      LAYER met2 ;
-        RECT 475.795 517.495 476.145 517.845 ;
     END
   END data_out[4]
   PIN data_out[5]
@@ -403,10 +295,6 @@ MACRO CF_ADC_SAR12
         RECT 476.47 517.2 476.77 518 ;
       LAYER met2 ;
         RECT 476.48 517.335 476.76 533 ;
-      LAYER met3 ;
-        RECT 476.445 517.495 476.795 517.845 ;
-      LAYER met2 ;
-        RECT 476.445 517.495 476.795 517.845 ;
     END
   END data_out[5]
   PIN data_out[6]
@@ -417,10 +305,6 @@ MACRO CF_ADC_SAR12
         RECT 481.575 517.2 481.875 518 ;
       LAYER met2 ;
         RECT 481.585 517.335 481.865 533 ;
-      LAYER met3 ;
-        RECT 481.55 517.495 481.9 517.845 ;
-      LAYER met2 ;
-        RECT 481.55 517.495 481.9 517.845 ;
     END
   END data_out[6]
   PIN data_out[10]
@@ -431,10 +315,6 @@ MACRO CF_ADC_SAR12
         RECT 484.175 517.2 484.475 518 ;
       LAYER met2 ;
         RECT 484.185 517.335 484.465 533 ;
-      LAYER met3 ;
-        RECT 484.15 517.495 484.5 517.845 ;
-      LAYER met2 ;
-        RECT 484.15 517.495 484.5 517.845 ;
     END
   END data_out[10]
   PIN data_out[11]
@@ -445,10 +325,6 @@ MACRO CF_ADC_SAR12
         RECT 484.825 517.2 485.125 518 ;
       LAYER met2 ;
         RECT 484.835 517.335 485.115 533 ;
-      LAYER met3 ;
-        RECT 484.8 517.495 485.15 517.845 ;
-      LAYER met2 ;
-        RECT 484.8 517.495 485.15 517.845 ;
     END
   END data_out[11]
   PIN iso_en
@@ -459,10 +335,6 @@ MACRO CF_ADC_SAR12
         RECT 485.475 517.2 485.775 518 ;
       LAYER met2 ;
         RECT 485.485 517.335 485.765 533 ;
-      LAYER met3 ;
-        RECT 485.45 517.495 485.8 517.845 ;
-      LAYER met2 ;
-        RECT 485.45 517.495 485.8 517.845 ;
     END
   END iso_en
   PIN next
@@ -473,10 +345,6 @@ MACRO CF_ADC_SAR12
         RECT 486.125 517.2 486.425 518 ;
       LAYER met2 ;
         RECT 486.135 517.335 486.415 533 ;
-      LAYER met3 ;
-        RECT 486.1 517.495 486.45 517.845 ;
-      LAYER met2 ;
-        RECT 486.1 517.495 486.45 517.845 ;
     END
   END next
   PIN sample_width[0]
@@ -487,10 +355,6 @@ MACRO CF_ADC_SAR12
         RECT 422.52 517.2 422.82 518 ;
       LAYER met2 ;
         RECT 422.53 517.335 422.81 533 ;
-      LAYER met3 ;
-        RECT 422.495 517.495 422.845 517.845 ;
-      LAYER met2 ;
-        RECT 422.495 517.495 422.845 517.845 ;
     END
   END sample_width[0]
   PIN vinp
@@ -548,29 +412,29 @@ MACRO CF_ADC_SAR12
       LAYER met3 ;
         RECT 487.785 341.575 488.24 342.705 ;
       LAYER met4 ;
-        RECT 487.3 315.725 488.24 316.025 ;
+        RECT 487.3 315.735 488.24 316.015 ;
       LAYER met3 ;
-        RECT 487.3 315.725 488.24 316.025 ;
+        RECT 487.3 315.735 488.24 316.015 ;
       LAYER met4 ;
-        RECT 487.3 319.055 488.24 319.355 ;
+        RECT 487.3 319.065 488.24 319.345 ;
       LAYER met3 ;
-        RECT 487.3 319.055 488.24 319.355 ;
+        RECT 487.3 319.065 488.24 319.345 ;
       LAYER met4 ;
-        RECT 487.3 324.945 488.24 325.245 ;
+        RECT 487.3 324.955 488.24 325.235 ;
       LAYER met3 ;
-        RECT 487.3 324.945 488.24 325.245 ;
+        RECT 487.3 324.955 488.24 325.235 ;
       LAYER met4 ;
-        RECT 487.3 328.405 488.24 328.705 ;
+        RECT 487.3 328.415 488.24 328.695 ;
       LAYER met3 ;
-        RECT 487.3 328.405 488.24 328.705 ;
+        RECT 487.3 328.415 488.24 328.695 ;
       LAYER met4 ;
-        RECT 487.3 331.865 488.24 332.165 ;
+        RECT 487.3 331.875 488.24 332.155 ;
       LAYER met3 ;
-        RECT 487.3 331.865 488.24 332.165 ;
+        RECT 487.3 331.875 488.24 332.155 ;
       LAYER met4 ;
-        RECT 487.3 333.915 488.24 334.215 ;
+        RECT 487.3 333.925 488.24 334.205 ;
       LAYER met3 ;
-        RECT 487.3 333.915 488.24 334.215 ;
+        RECT 487.3 333.925 488.24 334.205 ;
       LAYER met2 ;
         RECT 171.655 515.5 175.655 533 ;
       LAYER met3 ;
@@ -585,10 +449,6 @@ MACRO CF_ADC_SAR12
         RECT 46.81 517.535 47.07 533 ;
       LAYER met2 ;
         RECT 46.81 517.535 47.07 533 ;
-      LAYER met1 ;
-        RECT 46.8 525.13 47.08 525.41 ;
-      LAYER met2 ;
-        RECT 46.8 525.13 47.08 525.41 ;
     END
   END dft_inp
   PIN dft_inm
@@ -599,10 +459,6 @@ MACRO CF_ADC_SAR12
         RECT 52.39 517.535 52.65 533 ;
       LAYER met2 ;
         RECT 52.39 517.535 52.65 533 ;
-      LAYER met1 ;
-        RECT 52.38 525.13 52.66 525.41 ;
-      LAYER met2 ;
-        RECT 52.38 525.13 52.66 525.41 ;
     END
   END dft_inm
   PIN dft_op
@@ -613,10 +469,6 @@ MACRO CF_ADC_SAR12
         RECT 57.97 517.535 58.23 533 ;
       LAYER met2 ;
         RECT 57.97 517.535 58.23 533 ;
-      LAYER met1 ;
-        RECT 57.96 525.13 58.24 525.41 ;
-      LAYER met2 ;
-        RECT 57.96 525.13 58.24 525.41 ;
     END
   END dft_op
   PIN dft_om
@@ -627,10 +479,6 @@ MACRO CF_ADC_SAR12
         RECT 63.55 517.535 63.81 533 ;
       LAYER met2 ;
         RECT 63.55 517.535 63.81 533 ;
-      LAYER met1 ;
-        RECT 63.54 525.13 63.82 525.41 ;
-      LAYER met2 ;
-        RECT 63.54 525.13 63.82 525.41 ;
     END
   END dft_om
   PIN trimunit
@@ -641,10 +489,6 @@ MACRO CF_ADC_SAR12
         RECT 181.865 517.535 182.125 533 ;
       LAYER met1 ;
         RECT 181.865 517.535 182.125 533 ;
-      LAYER met2 ;
-        RECT 181.855 525.13 182.135 525.41 ;
-      LAYER met1 ;
-        RECT 181.855 525.13 182.135 525.41 ;
     END
   END trimunit
   PIN vpwr_lv_int
@@ -675,10 +519,6 @@ MACRO CF_ADC_SAR12
         RECT 463.225 517.2 463.525 518 ;
       LAYER met2 ;
         RECT 463.235 517.335 463.515 533 ;
-      LAYER met3 ;
-        RECT 463.2 517.495 463.55 517.845 ;
-      LAYER met2 ;
-        RECT 463.2 517.495 463.55 517.845 ;
     END
   END sel_csel_dft[1]
   PIN data_out[9]
@@ -689,10 +529,6 @@ MACRO CF_ADC_SAR12
         RECT 483.525 517.2 483.825 518 ;
       LAYER met2 ;
         RECT 483.535 517.335 483.815 533 ;
-      LAYER met3 ;
-        RECT 483.5 517.495 483.85 517.845 ;
-      LAYER met2 ;
-        RECT 483.5 517.495 483.85 517.845 ;
     END
   END data_out[9]
   PIN data_out[7]
@@ -703,10 +539,6 @@ MACRO CF_ADC_SAR12
         RECT 482.225 517.2 482.525 518 ;
       LAYER met2 ;
         RECT 482.235 517.335 482.515 533 ;
-      LAYER met3 ;
-        RECT 482.2 517.495 482.55 517.845 ;
-      LAYER met2 ;
-        RECT 482.2 517.495 482.55 517.845 ;
     END
   END data_out[7]
   PIN data_out[8]
@@ -717,10 +549,6 @@ MACRO CF_ADC_SAR12
         RECT 482.875 517.2 483.175 518 ;
       LAYER met2 ;
         RECT 482.885 517.335 483.165 533 ;
-      LAYER met3 ;
-        RECT 482.85 517.495 483.2 517.845 ;
-      LAYER met2 ;
-        RECT 482.85 517.495 483.2 517.845 ;
     END
   END data_out[8]
   PIN vdda_q
@@ -743,7 +571,7 @@ MACRO CF_ADC_SAR12
         RECT 193.09 517.545 193.35 518 ;
         RECT 194.13 517.545 194.39 518 ;
       LAYER met2 ;
-        RECT 99.13 517.545 99.61 521.6 ;
+        RECT 99.23 517.545 99.51 521.6 ;
       LAYER met3 ;
         RECT 1.23 518.5 502.01 521.6 ;
       LAYER met4 ;
@@ -805,7 +633,7 @@ MACRO CF_ADC_SAR12
     USE SIGNAL ;
     PORT
       LAYER met4 ;
-        RECT 40.24 363.2 40.705 363.72 ;
+        RECT 40.24 363.27 40.705 363.65 ;
     END
   END refby2
   PIN cap_trim[2]
@@ -816,10 +644,6 @@ MACRO CF_ADC_SAR12
         RECT 179.225 517.535 179.485 533 ;
       LAYER met1 ;
         RECT 179.225 517.535 179.485 533 ;
-      LAYER met2 ;
-        RECT 179.215 525.13 179.495 525.41 ;
-      LAYER met1 ;
-        RECT 179.215 525.13 179.495 525.41 ;
     END
   END cap_trim[2]
   PIN cap_trim[1]
@@ -830,10 +654,6 @@ MACRO CF_ADC_SAR12
         RECT 179.685 517.535 179.945 533 ;
       LAYER met1 ;
         RECT 179.685 517.535 179.945 533 ;
-      LAYER met2 ;
-        RECT 179.675 525.13 179.955 525.41 ;
-      LAYER met1 ;
-        RECT 179.675 525.13 179.955 525.41 ;
     END
   END cap_trim[1]
   PIN pumpclk
@@ -844,10 +664,6 @@ MACRO CF_ADC_SAR12
         RECT 98.76 517.545 99.02 533 ;
       LAYER met2 ;
         RECT 98.76 517.545 99.02 533 ;
-      LAYER met1 ;
-        RECT 98.75 525.135 99.03 525.415 ;
-      LAYER met2 ;
-        RECT 98.75 525.135 99.03 525.415 ;
     END
   END pumpclk
   PIN dft_enc
@@ -858,10 +674,6 @@ MACRO CF_ADC_SAR12
         RECT 176.245 517.535 176.505 533 ;
       LAYER met1 ;
         RECT 176.245 517.535 176.505 533 ;
-      LAYER met2 ;
-        RECT 176.235 525.13 176.515 525.41 ;
-      LAYER met1 ;
-        RECT 176.235 525.13 176.515 525.41 ;
     END
   END dft_enc
   PIN cap_trim[0]
@@ -872,10 +684,6 @@ MACRO CF_ADC_SAR12
         RECT 180.145 517.535 180.405 533 ;
       LAYER met1 ;
         RECT 180.145 517.535 180.405 533 ;
-      LAYER met2 ;
-        RECT 180.135 525.13 180.415 525.41 ;
-      LAYER met1 ;
-        RECT 180.135 525.13 180.415 525.41 ;
     END
   END cap_trim[0]
   PIN pd
@@ -886,10 +694,6 @@ MACRO CF_ADC_SAR12
         RECT 187.785 517.535 188.045 533 ;
       LAYER met1 ;
         RECT 187.785 517.535 188.045 533 ;
-      LAYER met2 ;
-        RECT 187.775 525.13 188.055 525.41 ;
-      LAYER met1 ;
-        RECT 187.775 525.13 188.055 525.41 ;
     END
   END pd
   PIN pd_ana
@@ -900,10 +704,6 @@ MACRO CF_ADC_SAR12
         RECT 187.125 517.535 187.385 533 ;
       LAYER met1 ;
         RECT 187.125 517.535 187.385 533 ;
-      LAYER met2 ;
-        RECT 187.115 525.13 187.395 525.41 ;
-      LAYER met1 ;
-        RECT 187.115 525.13 187.395 525.41 ;
     END
   END pd_ana
   PIN refclk
@@ -914,10 +714,6 @@ MACRO CF_ADC_SAR12
         RECT 193.61 517.535 193.87 533 ;
       LAYER met1 ;
         RECT 193.61 517.535 193.87 533 ;
-      LAYER met2 ;
-        RECT 193.6 525.13 193.88 525.41 ;
-      LAYER met1 ;
-        RECT 193.6 525.13 193.88 525.41 ;
     END
   END refclk
   PIN dft_inc[3]
@@ -928,10 +724,6 @@ MACRO CF_ADC_SAR12
         RECT 183.705 517.535 183.965 533 ;
       LAYER met1 ;
         RECT 183.705 517.535 183.965 533 ;
-      LAYER met2 ;
-        RECT 183.695 525.13 183.975 525.41 ;
-      LAYER met1 ;
-        RECT 183.695 525.13 183.975 525.41 ;
     END
   END dft_inc[3]
   PIN dft_inc[2]
@@ -942,10 +734,6 @@ MACRO CF_ADC_SAR12
         RECT 184.165 517.535 184.425 533 ;
       LAYER met1 ;
         RECT 184.165 517.535 184.425 533 ;
-      LAYER met2 ;
-        RECT 184.155 525.13 184.435 525.41 ;
-      LAYER met1 ;
-        RECT 184.155 525.13 184.435 525.41 ;
     END
   END dft_inc[2]
   PIN dft_inc[1]
@@ -956,10 +744,6 @@ MACRO CF_ADC_SAR12
         RECT 184.625 517.535 184.885 533 ;
       LAYER met1 ;
         RECT 184.625 517.535 184.885 533 ;
-      LAYER met2 ;
-        RECT 184.615 525.13 184.895 525.41 ;
-      LAYER met1 ;
-        RECT 184.615 525.13 184.895 525.41 ;
     END
   END dft_inc[1]
   PIN dft_inc[0]
@@ -970,10 +754,6 @@ MACRO CF_ADC_SAR12
         RECT 185.085 517.535 185.345 533 ;
       LAYER met1 ;
         RECT 185.085 517.535 185.345 533 ;
-      LAYER met2 ;
-        RECT 185.075 525.13 185.355 525.41 ;
-      LAYER met1 ;
-        RECT 185.075 525.13 185.355 525.41 ;
     END
   END dft_inc[0]
   PIN dft_outc[2]
@@ -984,10 +764,6 @@ MACRO CF_ADC_SAR12
         RECT 185.545 517.535 185.805 533 ;
       LAYER met1 ;
         RECT 185.545 517.535 185.805 533 ;
-      LAYER met2 ;
-        RECT 185.535 525.13 185.815 525.41 ;
-      LAYER met1 ;
-        RECT 185.535 525.13 185.815 525.41 ;
     END
   END dft_outc[2]
   PIN dft_outc[1]
@@ -998,10 +774,6 @@ MACRO CF_ADC_SAR12
         RECT 186.005 517.535 186.265 533 ;
       LAYER met1 ;
         RECT 186.005 517.535 186.265 533 ;
-      LAYER met2 ;
-        RECT 185.995 525.13 186.275 525.41 ;
-      LAYER met1 ;
-        RECT 185.995 525.13 186.275 525.41 ;
     END
   END dft_outc[1]
   PIN vccd_q
@@ -1022,10 +794,6 @@ MACRO CF_ADC_SAR12
         RECT 424.61 517.2 424.91 518 ;
       LAYER met2 ;
         RECT 424.62 517.335 424.9 533 ;
-      LAYER met3 ;
-        RECT 424.585 517.495 424.935 517.845 ;
-      LAYER met2 ;
-        RECT 424.585 517.495 424.935 517.845 ;
     END
   END sample_width[2]
   PIN vpwr_int
@@ -1085,10 +853,6 @@ MACRO CF_ADC_SAR12
         RECT 165.55 517.535 165.81 533 ;
       LAYER met1 ;
         RECT 165.55 517.535 165.81 533 ;
-      LAYER met2 ;
-        RECT 165.54 525.13 165.82 525.41 ;
-      LAYER met1 ;
-        RECT 165.54 525.13 165.82 525.41 ;
     END
   END icont_lv[1]
   PIN vsub_vic
@@ -1123,10 +887,6 @@ MACRO CF_ADC_SAR12
         RECT 165.97 517.535 166.23 533 ;
       LAYER met2 ;
         RECT 165.97 517.535 166.23 533 ;
-      LAYER met1 ;
-        RECT 165.96 525.13 166.24 525.41 ;
-      LAYER met2 ;
-        RECT 165.96 525.13 166.24 525.41 ;
     END
   END icont_lv[0]
   PIN dly_inc
@@ -1137,10 +897,6 @@ MACRO CF_ADC_SAR12
         RECT 166.81 517.535 167.07 533 ;
       LAYER met2 ;
         RECT 166.81 517.535 167.07 533 ;
-      LAYER met1 ;
-        RECT 166.8 525.13 167.08 525.41 ;
-      LAYER met2 ;
-        RECT 166.8 525.13 167.08 525.41 ;
     END
   END dly_inc
   PIN dcen
@@ -1151,10 +907,6 @@ MACRO CF_ADC_SAR12
         RECT 168.91 517.535 169.17 533 ;
       LAYER met2 ;
         RECT 168.91 517.535 169.17 533 ;
-      LAYER met1 ;
-        RECT 168.9 525.13 169.18 525.41 ;
-      LAYER met2 ;
-        RECT 168.9 525.13 169.18 525.41 ;
     END
   END dcen
   PIN ibiasin
@@ -1205,10 +957,6 @@ MACRO CF_ADC_SAR12
         RECT 186.465 517.535 186.725 533 ;
       LAYER met1 ;
         RECT 186.465 517.535 186.725 533 ;
-      LAYER met2 ;
-        RECT 186.455 525.13 186.735 525.41 ;
-      LAYER met1 ;
-        RECT 186.455 525.13 186.735 525.41 ;
     END
   END dft_outc[0]
   PIN enable_hv
@@ -1219,10 +967,6 @@ MACRO CF_ADC_SAR12
         RECT 181.405 517.535 181.665 533 ;
       LAYER met1 ;
         RECT 181.405 517.535 181.665 533 ;
-      LAYER met2 ;
-        RECT 181.395 525.13 181.675 525.41 ;
-      LAYER met1 ;
-        RECT 181.395 525.13 181.675 525.41 ;
     END
   END enable_hv
   PIN data_out[2]
@@ -1233,10 +977,6 @@ MACRO CF_ADC_SAR12
         RECT 474.52 517.2 474.82 518 ;
       LAYER met2 ;
         RECT 474.53 517.335 474.81 533 ;
-      LAYER met3 ;
-        RECT 474.495 517.495 474.845 517.845 ;
-      LAYER met2 ;
-        RECT 474.495 517.495 474.845 517.845 ;
     END
   END data_out[2]
   PIN data_out[1]
@@ -1247,10 +987,6 @@ MACRO CF_ADC_SAR12
         RECT 473.87 517.2 474.17 518 ;
       LAYER met2 ;
         RECT 473.88 517.335 474.16 533 ;
-      LAYER met3 ;
-        RECT 473.845 517.495 474.195 517.845 ;
-      LAYER met2 ;
-        RECT 473.845 517.495 474.195 517.845 ;
     END
   END data_out[1]
   OBS
@@ -1298,9 +1034,9 @@ MACRO CF_ADC_SAR12
       RECT 52.65 518 57.97 533 ;
       RECT 58.23 518 63.55 533 ;
       RECT 63.81 518 98.76 533 ;
-      RECT 99.02 518 99.13 533 ;
-      RECT 99.13 521.6 99.61 533 ;
-      RECT 99.61 518 99.7 533 ;
+      RECT 99.02 518 99.23 533 ;
+      RECT 99.23 521.6 99.51 533 ;
+      RECT 99.51 518 99.7 533 ;
       RECT 99.96 518 148.615 533 ;
       RECT 150.15 518 163.255 533 ;
       RECT 164.255 518 165.55 533 ;
