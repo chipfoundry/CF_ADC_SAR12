@@ -7,7 +7,7 @@
 // Analog voltages are Verilog real backdoors (1-bit pins stay digital):
 //   vinp_v, vinm_v, vrefhi_v, vreflo_v, refby2_v
 //
-// Assumed protocol (not Infineon-verified):
+// Assumed protocol:
 //   * reset_n low, pd, pd_ana, or enable_hv low → idle, eof=0, data_out=0
 //   * sof sampled on refclk in IDLE starts a conversion
 //   * sample for max(sample_width, 1) clocks, then convert nbits+OVERHEAD

@@ -1,9 +1,9 @@
 # CF_ADC_SAR12 behavioral model
 
-Ideal functional models for digital simulation. They are **not** SPICE-accurate
-and they are **not** Infineon protocol-verified. Use them to exercise `sof` /
-`eof` firmware and SoC wrappers. Do not add these files to OpenLane
-`VERILOG_FILES`.
+Ideal functional models for digital simulation. They are not SPICE-accurate.
+The conversion sequence is an ideal assumption for functional simulation.
+Use them to exercise `sof` / `eof` firmware and SoC wrappers. Do not add
+these files to OpenLane `VERILOG_FILES`.
 
 ## Files
 

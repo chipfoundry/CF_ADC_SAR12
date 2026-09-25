@@ -2,9 +2,9 @@
 
 > 12-bit SAR ADC
 
-Draft for designer review. Electrical values below are transcribed from the
-packaging source extract. The public GDS is an abstract; ChipFoundry
-substitutes protected full geometry at tapeout.
+Electrical values below are transcribed from the packaging source extract.
+The public GDS is an abstract; ChipFoundry substitutes protected full
+geometry at tapeout.
 
 This package ships SRAM-style PG wraps: customer `CF_ADC_SAR12` around analog
 leaf `CF_ADC_SAR12_core`, and customer `CF_ADC_SAR12_sar_refs` around
@@ -38,14 +38,7 @@ wrap. Analog supplies stay wrap ports.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_SAR12 --version 0.2.7 --include-drafts
-```
-
-Until the marketplace listing is published, install from a local catalog
-override the same way `cf-adc-sar12-test-project` does:
-
-```bash
-ipm install CF_ADC_SAR12 --version 0.2.7 --include-drafts --local-file ip/catalog.json
+ipm install CF_ADC_SAR12 --version 0.2.8
 ```
 
 Use `hdl/gl/CF_ADC_SAR12.v` and `hdl/gl/CF_ADC_SAR12_sar_refs.v` as the
@@ -241,8 +234,7 @@ for `max(sample_width, 1)` clocks and converts for `nbits + 1` clocks.
 `data_out[11:0]` is valid in the same cycle `eof` rises (`eof` is one
 `refclk` wide). `resolution` `2'b01` / `2'b10` select 10- / 8-bit
 left-justified results; anything else is 12-bit. Liberty remains the STA
-timing view; this framing is an ideal assumption, not an Infineon
-programming spec.
+timing view; this framing is an ideal assumption for functional simulation.
 
 ## Limitations and Open Issues
 
@@ -283,3 +275,4 @@ a run returns.
 | 0.2.5 | 2026-09-19 | Drop illegal wrap via pads; PR-stem labels on vendor pads; keep north SAR met3 off wrap LEF. |
 | 0.2.6 | 2026-09-21 | Core waffleDrop, inset dnwell, li/met1/met2 blockage, and slotted dummy poly/diff for tapeout pd/f1. |
 | 0.2.7 | 2026-09-25 | Core `cmm1`/`cmm2` waffleDrop (62/24, 105/52) so fillgen does not overwrite analog. LI fill-block remains `li1.blockage` 67/10. |
+| 0.2.8 | 2026-09-25 | Customer README and behavioral notes. Marketplace listing is published. |
