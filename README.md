@@ -38,7 +38,7 @@ wrap. Analog supplies stay wrap ports.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_SAR12 --version 0.2.8
+ipm install CF_ADC_SAR12 --version 0.2.9
 ```
 
 Use `hdl/gl/CF_ADC_SAR12.v` and `hdl/gl/CF_ADC_SAR12_sar_refs.v` as the
@@ -276,3 +276,4 @@ a run returns.
 | 0.2.6 | 2026-09-21 | Core waffleDrop, inset dnwell, li/met1/met2 blockage, and slotted dummy poly/diff for tapeout pd/f1. |
 | 0.2.7 | 2026-09-25 | Core `cmm1`/`cmm2` waffleDrop (62/24, 105/52) so fillgen does not overwrite analog. LI fill-block remains `li1.blockage` 67/10. |
 | 0.2.8 | 2026-09-25 | Customer README and behavioral notes. Marketplace listing is published. |
+| 0.2.9 | 2026-11-07 | Leaf GDS carries wafflefill so pre-merge density passes, and adds the met3 waffleDrop cover. WaffleDrop still keeps chip fill out of the block. |
